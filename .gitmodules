@@ -1,0 +1,6 @@
+[submodule "vim/vim.symlink/bundle/vim-plug"]
+	path = vim/vim.symlink/bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug
+[submodule "vim/vim.symlink/bundle/vim-pathogen"]
+	path = vim/vim.symlink/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
