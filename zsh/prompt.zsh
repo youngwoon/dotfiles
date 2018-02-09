@@ -43,7 +43,7 @@ need_push () {
 
     if [[ $number == 0 ]]
     then
-      echo " "
+      echo ""
     else
       echo " with %{$fg_bold[magenta]%}$number unpushed%{$reset_color%}"
     fi
@@ -61,13 +61,17 @@ battery_status() {
     $ZSH/bin/battery-status
   fi
 }
-
-export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
+#export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'${python_info[virtualenv]}$(battery_status)in $(directory_name) $(git_dirty)$(need_push) › '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
 precmd() {
   title "zsh" "%m" "%55<...<%~"
+  if (( $+functions[python-info] )); then
+    python-info on
+    python-info
+  fi
   set_prompt
 }
