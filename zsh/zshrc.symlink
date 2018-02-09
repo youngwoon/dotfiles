@@ -40,6 +40,14 @@ done
 
 unset config_files
 
+# Terminal
+# screen-256color if inside tmux, xterm-256color otherwise
+if [[ -n "$TMUX" ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="xterm-256color"
+fi
+
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search

@@ -51,11 +51,12 @@ need_push () {
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  #echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}" # print full path
 }
 
 battery_status() {
-  if [[ $(sysctl -n hw.model) == *"Book"* ]]
+  if [[ "`uname`" == "Darwin" ]] && [[ $(sysctl -n hw.model) == *"Book"* ]]
   then
     $ZSH/bin/battery-status
   fi
