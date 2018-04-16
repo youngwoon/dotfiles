@@ -2,6 +2,7 @@ autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
+# git
 if (( $+commands[git] ))
 then
   git="$commands[git]"
@@ -20,9 +21,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo " on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo " on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -43,26 +44,45 @@ need_push () {
 
     if [[ $number == 0 ]]
     then
-      echo ""
+      echo " %{$fg_bold[green]%}✓%{$reset_color%}"
     else
-      echo " with %{$fg_bold[magenta]%}$number unpushed%{$reset_color%}"
+      echo " %{$fg[red]%}✗%{$reset_color%}"
+      #echo ", %{$fg_bold[magenta]%}$number unpushed%{$reset_color%}"
     fi
   fi
 }
 
-directory_name() {
-  #echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
-  echo "%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}" # print full path
+git_prompt() {
+  if $(! $git status -s &> /dev/null)
+  then
+    echo ""
+  else
+    echo " ($(git_dirty)$(need_push))"
+  fi
 }
 
+# Diretory
+directory_name() {
+  #echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}" # print only current dir
+  #echo "%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}" # print full path
+  echo "%{$fg[yellow]%}${PWD/#$HOME/~}%{$reset_color%}" # print full path
+}
+
+# Battery
 battery_status() {
   if [[ "`uname`" == "Darwin" ]] && [[ $(sysctl -n hw.model) == *"Book"* ]]
   then
     $ZSH/bin/battery-status
   fi
 }
-#export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
-export PROMPT=$'${python_info[virtualenv]}$(battery_status)in $(directory_name)$(git_dirty)$(need_push) › '
+
+# User
+user_name() {
+  echo "%{$fg[cyan]%}$USER@$(uname -n)%{$reset_color%}"
+}
+
+# Define prompts
+export PROMPT=$'${python_info[virtualenv]}$(battery_status)$(user_name):$(directory_name)$(git_prompt) › '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
