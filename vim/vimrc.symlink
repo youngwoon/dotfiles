@@ -135,6 +135,10 @@ if ! has('nvim')
     endif
 endif
 
+" abbreiviation
+ab ipdb import ipdb; ipdb.set_trace()
+
+
 """"""""""""""""""""""""""""""""
 " 2. Key and Functional Mappings
 """"""""""""""""""""""""""""""""
