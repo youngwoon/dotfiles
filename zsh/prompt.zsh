@@ -68,21 +68,13 @@ directory_name() {
   echo "%{$fg[yellow]%}${PWD/#$HOME/~}%{$reset_color%}" # print full path
 }
 
-# Battery
-battery_status() {
-  if [[ "`uname`" == "Darwin" ]] && [[ $(sysctl -n hw.model) == *"Book"* ]]
-  then
-    $ZSH/bin/battery-status
-  fi
-}
-
 # User
 user_name() {
   echo "%{$fg[cyan]%}$USER@$(uname -n)%{$reset_color%}"
 }
 
 # Define prompts
-export PROMPT=$'${python_info[virtualenv]}$(battery_status)$(user_name):$(directory_name)$(git_prompt) › '
+export PROMPT=$'${python_info[virtualenv]}$(user_name):$(directory_name)$(git_prompt) › '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
