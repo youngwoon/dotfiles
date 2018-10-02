@@ -572,6 +572,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " }}}
 
+" vim-snippets {{{
+let g:snips_author="Youngwoon Lee"
+let g:snips_email="lywoon89@gmail.com"
+let g:snips_github="youngwoon"
+" }}}
+
 " vim-pandoc {{{
 
 " disable automatic folding

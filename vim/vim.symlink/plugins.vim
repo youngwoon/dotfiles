@@ -32,6 +32,7 @@ Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'sjl/gundo.vim'
 Plug 'SirVer/ultisnips' " automatically add snippets
+Plug 'honza/vim-snippets' "snippets used in ultisnips
 Plug 'vim-scripts/matchit.zip' " match % for tags in HTML, XML
 "Plug 'tomtom/tlib_vim'
 "Plug 'MarcWeber/vim-addon-mw-utils'
