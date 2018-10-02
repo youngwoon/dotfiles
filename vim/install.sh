@@ -19,3 +19,5 @@ elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
 then
     sudo apt-get install fonts-powerline
 fi
+
+sed -i 's/nowrap/wrap/g' ~/.vim/plugged/python-mode/ftplugin/python/pymode.vim
