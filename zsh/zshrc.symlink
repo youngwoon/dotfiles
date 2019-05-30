@@ -56,3 +56,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Auto suggestion
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+# Locale
+export LC_ALL=C
