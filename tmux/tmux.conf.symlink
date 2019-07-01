@@ -37,10 +37,14 @@ bind-key v split-window -h -c "#{pane_current_path}"
 bind-key s split-window -v -c "#{pane_current_path}"
 
 # resizeing pane
-bind-key -n C-S-Right resize-pane -R 10
-bind-key -n C-S-Left resize-pane -L 10
-bind-key -n C-S-Up resize-pane -U 5
-bind-key -n C-S-Down resize-pane -D 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r H resize-pane -L 5
+bind -r L resize-pane -R 5
+#bind-key -n C-S-Right resize-pane -R 10
+#bind-key -n C-S-Left resize-pane -L 10
+#bind-key -n C-S-Up resize-pane -U 5
+#bind-key -n C-S-Down resize-pane -D 5
 #bind-key q display-panes
 
 # seamless navigation between vim and tmux
