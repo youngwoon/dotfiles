@@ -44,7 +44,7 @@ endif
 Plug 'sheerun/vim-polyglot' " language packs
 Plug 'tmux-plugins/vim-tmux'
 
-Plug 'klen/python-mode' " python code indent, pep, completion
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }  " python code indent, pep, completion
 Plug 'davidhalter/jedi-vim' " python autocompletion, goto assignment: ,g  goto definition: ,d  renaming: ,r
 
 "Plug 'artur-shaik/vim-javacomplete2'
@@ -56,6 +56,8 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 "Plug 'tfnico/vim-gradle'
 "Plug 'Tyilo/applescript.vim'
 "Plug 'rdolgushin/groovy.vim'
+
+Plug 'psf/black', { 'branch': 'stable' }
 
 if has('nvim')
     function! DoRemote(arg)

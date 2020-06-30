@@ -118,7 +118,7 @@ set mps+=<:>
 set switchbuf+=usetab,split
 
 " diff: ignore whitespaces
-set diffopt+=iwhite
+"set diffopt+=hiddenoff
 
 " jump to the last position when reopening a file
 if has("autocmd")
