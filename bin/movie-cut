@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# MOVIE CROP as in: "CROP TOP HALF OF THE MOVIE FOR RL VIDEOS"
+#
+#
+#   $1 - the path to the movie we're converting.
+#
+# Examples:
+#
+#   movie-crop <path>
+#   movie-crop ~/Desktop/dr-strangelove.mp4
+#   movie-crop ~/Desktop/holman-backflip-on-fire.mov
+
+# crop top part of the movie
+
+p=${1%.*}    # get the prefix of the file path up to the last dot
+s=${1##*.}   # get the extension of the file after the last dot
+outf="${p}_cropped.$s"
+
+echo $p
+echo $s
+echo $outf
+
+ffmpeg -i "$1" -filter:v "crop=500:500:0:0" "$outf"
