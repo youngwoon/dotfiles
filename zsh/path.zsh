@@ -11,7 +11,7 @@ eval "$(pyenv virtualenv-init -)"
 
 
 # macOS path
-if [ "$(uname -s)" == "Darwin" ]
+if [ "$(uname -s)" = "Darwin" ]
 then
     export CPATH=`xcrun --show-sdk-path`/usr/include
     export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
