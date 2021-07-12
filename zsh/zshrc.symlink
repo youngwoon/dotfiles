@@ -60,3 +60,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # Locale
 #export LC_ALL=C
 export LC_ALL=en_US.UTF-8
+
+# For Bitwarden Alfred extension
+export BW_SESSION="NR3nd+A+QsaV5rCdjbA0IrOSVBlUe0Lb6nlZ5I422EKZbIJgX6EPnxKcrCJol/2G94HgN6ekZNzhod6lZ8vmKg=="
