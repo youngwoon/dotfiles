@@ -9,6 +9,9 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # <<< pyenv initialize <<<
 
+alias pip=/usr/local/bin/pip3
+alias python=/usr/local/bin/python3
+
 
 # macOS path
 if [ "$(uname -s)" = "Darwin" ]
