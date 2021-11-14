@@ -5,7 +5,9 @@
 set -g history-limit 100000
 
 # set default shell
-set -g default-shell /bin/zsh
+# set -g default-shell /bin/zsh # had problem with MacOS Monterey (add system path before homebrew path)
+set -g default-command /bin/zsh
+
 
 # no delay when switching modes (copy mode, etc.)
 set -sg escape-time 0

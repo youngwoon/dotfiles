@@ -1,6 +1,9 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 # ruby env
-eval "$(rbenv init -)"
-export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init - zsh)"
 
 
 # >>> pyenv initialize >>>
@@ -9,8 +12,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # <<< pyenv initialize <<<
 
-alias pip=/usr/local/bin/pip3
-alias python=/usr/local/bin/python3
+alias python=/usr/bin/python3
+alias pip=/usr/bin/pip3
 
 
 # macOS path
@@ -22,7 +25,6 @@ fi
 
 
 # mujoco
-MUJOCO_PY_MJKEY_PATH=$HOME/.mujoco/mjkey.txt
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin:$HOME/.mujoco/mjpro150/bin
 
 
