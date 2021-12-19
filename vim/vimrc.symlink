@@ -4,6 +4,12 @@ scriptencoding utf-8
 " 0. Load Plugin
 """""""""""""""""""""""""""
 
+" vim-polyglot {{{
+
+let g:polyglot_disabled = ['python']
+
+" }}}
+
 " All the vim plugins, powered by 'vim-plug', are
 " listed up in the separate file 'plugins.vim'.
 " It is for making this vimrc could also work out-of-box
@@ -433,12 +439,6 @@ endif
 """""""""""""""""""""""""""
 " 5. Plugin Settings
 """""""""""""""""""""""""""
-
-" vim-polyglot {{{
-
-let g:polyglot_disabled = ['python']
-
-" }}}
 
 " vim-startify {{{
 
