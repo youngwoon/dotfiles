@@ -8,12 +8,13 @@ eval "$(rbenv init - zsh)"
 
 # >>> pyenv initialize >>>
 export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # <<< pyenv initialize <<<
 
-alias python=/usr/bin/python3
-alias pip=/usr/bin/pip3
+# alias python=/usr/bin/python3
+# alias pip=/usr/bin/pip3
 
 
 # macOS path
@@ -25,7 +26,13 @@ fi
 
 
 # mujoco
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin:$HOME/.mujoco/mjpro150/bin
+if [ -d "$HOME/.mujoco" ]; then
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
+fi
+if [ "$(uname -s)" = "Darwin" ]
+then
+    export CC=/opt/homebrew/bin/gcc-11
+fi
 
 
 # Google Cloud
