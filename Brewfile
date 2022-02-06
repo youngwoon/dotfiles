@@ -20,6 +20,7 @@ brew 'the_silver_searcher'
 brew 'tcl-tk'
 brew 'bitwarden-cli'
 brew 'ffmpeg'
+brew 'open-mpi'
 
 cask 'alfred'
 cask 'rectangle'
