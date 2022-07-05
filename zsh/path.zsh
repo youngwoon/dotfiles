@@ -1,9 +1,11 @@
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$(uname -s)" = "Darwin" ]
+then
+    # homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
-# ruby env
-eval "$(rbenv init - zsh)"
+    # ruby env
+    eval "$(rbenv init - zsh)"
+fi
 
 
 # >>> pyenv initialize >>>
