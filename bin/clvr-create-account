@@ -1,0 +1,40 @@
+#!/bin/bash
+# First argument is username to create.
+
+if [ -z "$1" ]
+  then
+    echo "Must specify username"
+    exit 1
+fi
+
+if [ -z "$2" ]
+  then
+    echo "Must specify password"
+    exit 1
+fi
+
+if [ -z "$3" ]
+  then
+    echo "Must specify public key for ssh"
+    exit 1
+fi
+
+create_user_account () {
+  username=$1
+  password=$2
+  public_key=$3
+
+  sudo adduser $username --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+  echo "$username:$password" | sudo chpasswd
+
+  sudo mkdir -p /data/$username
+  sudo chown -R $username:$username /data/$username
+
+  sudo mkdir -p /home/$username/.ssh
+  sudo echo "$public_key" > /home/$username/.ssh/authorized_keys
+  sudo chmod 700 /home/$username/.ssh
+  sudo chmod 600 /home/$username/.ssh/authorized_keys
+  sudo chown -R $username:$username /home/$username/.ssh
+}
+
+create_user_account $1 $2 $3

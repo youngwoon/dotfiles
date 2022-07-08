@@ -1,0 +1,43 @@
+#!/bin/bash
+# Before you execute this script, you need to specify a list of servers in L26.
+# Also make sure `~/.dotfiles/bin` should include `clvr-create-account` script in all servers.
+# Example:
+#   clvr-create-account-all <username> <public_key>
+#   clvr-create-account-all youngwoon "ssh-rsa AAAA....."
+
+if [ -z "$1" ]
+  then
+    echo "Must specify username"
+    exit 1
+fi
+
+if [ -z "$2" ]
+  then
+    echo "Must specify public key for ssh"
+    exit 1
+fi
+
+rand_pass=$(openssl rand -base64 9)
+echo $rand_pass
+username=$1
+public_key=$2
+# List all servers here.
+
+# declare -a servers=('seg@seg.cais.plus' 'fault@fault.cais.plus')
+declare -a servers=('youngwoon@137.68.191.101:2222')
+
+for i in "${servers[@]}"
+do
+  echo "$i"
+
+  read -p "Continue [Y/n]?" confirm
+
+  while [[ $confirm = [yY] ]]
+  do
+    ssh -t $i "cd ~/.dotfiles/bin && ./clvr-create-account $username $rand_pass $public_key"
+    read -p "Continue [Y/n]?" confirm
+  done
+
+done
+
+echo $rand_pass
