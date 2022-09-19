@@ -29,7 +29,7 @@ alias limd2="ssh -X lywoon@10.140.99.236"
 alias lime="ssh -X lywoon@lim-e.usc.edu"
 alias lime2="ssh -X lywoon@10.140.99.227"
 alias limweb="ssh -i "~/.ssh/limlab-web.pem" ubuntu@ec2-35-164-190-171.us-west-2.compute.amazonaws.com"
-alias gpu="ssh -t lywoon@lim-a.usc.edu 'gpustat';ssh -t lywoon@lim-b.usc.edu 'gpustat';ssh -t lywoon@lim-c.usc.edu 'gpustat';ssh -t lywoon@lim-d.usc.edu 'gpustat';ssh -t lywoon@lim-e.usc.edu 'gpustat';"
+alias gpu="ssh -t lywoon@lim-a 'gpustat';ssh -t lywoon@lim-b 'gpustat';ssh -t lywoon@lim-c 'gpustat';ssh -t lywoon@lim-d 'gpustat';ssh -t lywoon@lim-e 'gpustat';"
 
 alias toy="ssh -i ~/.ssh/clvr_usc_2021 clvr.usc@34.134.44.190"
 alias chair="ssh -i ~/.ssh/clvr_usc_2021 clvr.usc@34.122.101.51"
