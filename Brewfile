@@ -14,24 +14,26 @@ brew 'readline'
 brew 'xz'
 brew 'wget'
 brew 'youtube-dl'
-brew 'ruby'
-brew 'rbenv'
+brew 'ruby'  # ruby for jekyll
+brew 'rbenv'  # ruby environment for jekyll
 brew 'the_silver_searcher'
 brew 'tcl-tk'
-brew 'bitwarden-cli'
+brew 'bitwarden-cli'  # password manager bitwarden
 brew 'ffmpeg'
 brew 'open-mpi'
 
-cask 'alfred'
-cask 'rectangle'
+cask 'alfred'  # better spotlight
+cask 'rectangle'  # window management with keyboard
 cask 'dropbox'
-cask 'dynalist'
 cask 'pdf-expert'
 cask 'zoom'
-cask 'aldente'
-cask 'alt-tab'
-cask 'mark-text'
-cask 'bitwarden'
-cask 'mactex'
+cask 'aldente'  # cap the max battery charge to 80%
+cask 'alt-tab'  # alt + tab in windows OS
+cask 'mark-text'  # free markdown editor
+cask 'bitwarden'  # password manager
+cask 'mactex'  # LaTex
 cask 'docker'
-cask 'balance-lock'
+cask 'miniconda'
+cask 'balance-lock'  # keep the volumes of left and right earphones
+cask 'iina'  # movie player
+cask 'notion'  # note app
