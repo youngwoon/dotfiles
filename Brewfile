@@ -37,3 +37,4 @@ cask 'miniconda'
 cask 'balance-lock'  # keep the volumes of left and right earphones
 cask 'iina'  # movie player
 cask 'notion'  # note app
+cask 'keka'  # compress/extract Korean file names
