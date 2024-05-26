@@ -21,6 +21,7 @@ brew 'tcl-tk'
 brew 'bitwarden-cli'  # password manager bitwarden
 brew 'ffmpeg'
 brew 'open-mpi'
+brew 'pyenv'
 
 cask 'alfred'  # better spotlight
 cask 'rectangle'  # window management with keyboard
