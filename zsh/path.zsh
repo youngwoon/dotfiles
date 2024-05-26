@@ -44,15 +44,15 @@ then
 fi
 
 
-# mujoco-py
-if [ -d "$HOME/.mujoco" ]; then
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
-fi
-if [ "$(uname -s)" = "Darwin" ]
-then
-    # Change gcc version depending on gcc required for mujoco-py.
-    export CC=/opt/homebrew/bin/gcc-12
-fi
+# # mujoco-py
+# if [ -d "$HOME/.mujoco" ]; then
+#     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
+# fi
+# if [ "$(uname -s)" = "Darwin" ]
+# then
+#     # Change gcc version depending on gcc required for mujoco-py.
+#     export CC=/opt/homebrew/bin/gcc-12
+# fi
 
 
 # Google Cloud

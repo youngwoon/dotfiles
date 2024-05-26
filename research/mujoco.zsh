@@ -1,1 +1,1 @@
-export MUJOCO_GL=egl
+# export MUJOCO_GL=egl
