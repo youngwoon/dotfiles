@@ -16,12 +16,15 @@ brew 'wget'
 brew 'youtube-dl'
 brew 'ruby'  # ruby for jekyll
 brew 'rbenv'  # ruby environment for jekyll
+brew 'chruby'
+brew 'ruby-install'
 brew 'the_silver_searcher'
 brew 'tcl-tk'
 brew 'bitwarden-cli'  # password manager bitwarden
 brew 'ffmpeg'
 brew 'open-mpi'
 brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 cask 'alfred'  # better spotlight
 cask 'rectangle'  # window management with keyboard
@@ -40,3 +43,9 @@ cask 'iina'  # movie player
 cask 'notion'  # note app
 cask 'keka'  # compress/extract Korean file names
 cask 'iterm2'
+cask 'slack'
+cask 'webex'
+cask 'shottr'
+cask 'visual-studio-code'
+cask 'handbrake'
+cask 'readdle-spark'

@@ -3,6 +3,10 @@ then
     # homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.1.3
+
     # ruby env
     eval "$(rbenv init - zsh)"
 fi
