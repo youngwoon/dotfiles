@@ -13,7 +13,7 @@ brew 'openssl'
 brew 'readline'
 brew 'xz'
 brew 'wget'
-brew 'youtube-dl'
+brew 'yt-dlp'
 brew 'ruby'  # ruby for jekyll
 brew 'rbenv'  # ruby environment for jekyll
 brew 'chruby'
@@ -22,9 +22,10 @@ brew 'the_silver_searcher'
 brew 'tcl-tk'
 brew 'bitwarden-cli'  # password manager bitwarden
 brew 'ffmpeg'
-brew 'open-mpi'
-brew 'pyenv'
-brew 'pyenv-virtualenv'
+# brew 'open-mpi'
+brew 'uv'
+# brew 'pyenv'
+# brew 'pyenv-virtualenv'
 
 cask 'alfred'  # better spotlight
 cask 'rectangle'  # window management with keyboard
@@ -33,7 +34,7 @@ cask 'pdf-expert'
 cask 'zoom'
 cask 'aldente'  # cap the max battery charge to 80%
 cask 'alt-tab'  # alt + tab in windows OS
-cask 'mark-text'  # free markdown editor
+# cask 'mark-text'  # free markdown editor
 cask 'bitwarden'  # password manager
 cask 'mactex'  # LaTex
 cask 'docker'
@@ -46,6 +47,9 @@ cask 'iterm2'
 cask 'slack'
 cask 'webex'
 cask 'shottr'
-cask 'visual-studio-code'
-cask 'handbrake'
+# cask 'visual-studio-code'
+cask 'cursor'
+cask 'handbrake-app'
 cask 'readdle-spark'
+cask 'chatgpt'
+cask 'jordanbaird-ice'

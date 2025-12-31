@@ -9,31 +9,29 @@ then
 
     # ruby env
     eval "$(rbenv init - zsh)"
-fi
 
+    # >>> pyenv initialize >>>
+    # export PATH="$HOME/.pyenv/bin:$PATH"
+    # eval "$(pyenv init --path)"
+    # eval "$(pyenv init -)"
+    # eval "$(pyenv virtualenv-init -)"
+    # <<< pyenv initialize <<<
 
-# >>> pyenv initialize >>>
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# <<< pyenv initialize <<<
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+        if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+            . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+        else
+            export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 
 # alias python=/usr/bin/python3
@@ -46,17 +44,6 @@ then
     export CPATH=`xcrun --show-sdk-path`/usr/include
     export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 fi
-
-
-# # mujoco-py
-# if [ -d "$HOME/.mujoco" ]; then
-#     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
-# fi
-# if [ "$(uname -s)" = "Darwin" ]
-# then
-#     # Change gcc version depending on gcc required for mujoco-py.
-#     export CC=/opt/homebrew/bin/gcc-12
-# fi
 
 
 # Google Cloud
