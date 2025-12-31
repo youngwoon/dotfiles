@@ -24,7 +24,6 @@ brew 'bitwarden-cli'  # password manager bitwarden
 brew 'ffmpeg'
 # brew 'open-mpi'
 brew 'uv'
-brew 'atuin'
 # brew 'pyenv'
 # brew 'pyenv-virtualenv'
 
